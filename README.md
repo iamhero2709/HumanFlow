@@ -34,7 +34,7 @@
 ## Core Evaluation (Real)
 
 | Metric | Value | Interpretation |
-|:--|:--:|:--|
+|:--|--:|:--|
 | BERTScore F1 | 0.8424 | Semantic similarity to prompts |
 | ROUGE-L | 0.0908 | Low overlap indicates original generation |
 | Perplexity | 1.5242 | Confidence/coherence (lower is better) |
