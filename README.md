@@ -42,7 +42,7 @@
 
 ### Model Availability
 
-- Full 16-bit model: https://huggingface.co/randhir302/HumanFlow
+- Full 16-bit model: [https://huggingface.co/randhir302/HumanFlow](https://huggingface.co/randhir302/HumanFlow)
 - Quantized model: Coming soon
 
 ---
