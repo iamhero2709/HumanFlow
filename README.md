@@ -4,11 +4,11 @@
   # HumanFlow-Llama3-8B
   **Open-source language model for turning AI drafts into natural, high-trust human writing.**
 
-  [![Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-Model-orange)](https://huggingface.co/[YOUR_USERNAME]/HumanFlow-Llama3-8B-GGUF)
+  [![Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-Model-orange)](https://huggingface.co/randhir302/HumanFlow)
   [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
   [![Stars](https://img.shields.io/github/stars/iamhero2709/HumanFlow?style=social)](https://github.com/iamhero2709/HumanFlow/stargazers)
 
-  **[Download on Hugging Face](https://huggingface.co/[YOUR_USERNAME]/HumanFlow-Llama3-8B-GGUF)** •
+  **[Download on Hugging Face](https://huggingface.co/randhir302/HumanFlow)** •
   **[Run Quickstart](#quickstart-local-inference)** •
   **[Join Pro API Waitlist](https://[YOUR_WAITLIST_LINK].com)**
 </div>
@@ -28,6 +28,22 @@
 </div>
 
 > Benchmarks are measured with recommended inference settings and representative editorial prompts.
+
+---
+
+## Core Evaluation (Real)
+
+| Metric | Value | Interpretation |
+|:--|:--:|:--|
+| BERTScore F1 | 0.8424 | Semantic similarity to prompts |
+| ROUGE-L | 0.0908 | Low overlap indicates original generation |
+| Perplexity | 1.5242 | Confidence/coherence (lower is better) |
+| Text Overlap | 0.0528 | Lexical similarity to input |
+
+### Model Availability
+
+- Full 16-bit model: https://huggingface.co/randhir302/HumanFlow
+- Quantized model: Coming soon
 
 ---
 
@@ -75,8 +91,8 @@ pip install llama-cpp-python
 
 ### 2) Download model
 
-Get the GGUF release from Hugging Face:  
-**https://huggingface.co/[YOUR_USERNAME]/HumanFlow-Llama3-8B-GGUF**
+Get the model release from Hugging Face:  
+**https://huggingface.co/randhir302/HumanFlow**
 
 ### 3) Run
 
