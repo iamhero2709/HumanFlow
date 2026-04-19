@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/logo.png" alt="HumanFlow Logo" width="400"/>
+  <img src="assets/humanflow_logofinal.png" alt="HumanFlow Logo" width="400"/>
 
   <h1>🌊 HumanFlow-Llama3-8B</h1>
   <p><b>The Antidote to Robotic AI Text.</b></p>
