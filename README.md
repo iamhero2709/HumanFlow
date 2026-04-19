@@ -1,49 +1,162 @@
 <div align="center">
-  <img src="assets/humanflow_logofinal.png" alt="HumanFlow Logo" width="400"/>
+  <img src="assets/humanflow_logofinal.png" alt="HumanFlow Logo" width="320"/>
 
-  <h1>🌊 HumanFlow-Llama3-8B</h1>
-  <p><b>The Antidote to Robotic AI Text.</b></p>
+  # HumanFlow-Llama3-8B
+  **Open-source language model for turning AI drafts into natural, high-trust human writing.**
 
-  <a href="https://huggingface.co/[YOUR_USERNAME]/HumanFlow-Llama3-8B-GGUF"><img src="https://img.shields.io/badge/🤗%20Hugging%20Face-Models-orange"/></a>
-  <a href="https://colab.research.google.com/drive/[YOUR_COLAB_LINK]"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"/></a>
+  [![Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-Model-orange)](https://huggingface.co/[YOUR_USERNAME]/HumanFlow-Llama3-8B-GGUF)
+  [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+  [![Stars](https://img.shields.io/github/stars/iamhero2709/HumanFlow?style=social)](https://github.com/iamhero2709/HumanFlow/stargazers)
+
+  **[Download on Hugging Face](https://huggingface.co/[YOUR_USERNAME]/HumanFlow-Llama3-8B-GGUF)** •
+  **[Run Quickstart](#quickstart-local-inference)** •
+  **[Join Pro API Waitlist](https://[YOUR_WAITLIST_LINK].com)**
 </div>
 
-<br/>
+---
 
-Standard LLMs are exhausted. They use words like *"delve"*, *"tapestry"*, and *"imperative"* while maintaining a highly predictable, mechanical sentence structure. Prompt engineering isn't enough to bypass advanced AI detectors or make the text readable for actual humans.
+## Performance Snapshot
 
-**HumanFlow** is a custom-trained Llama-3 8B model engineered specifically to strip out RLHF alignment artifacts and rewrite AI-generated drafts with human-like burstiness, perplexity, and natural cognitive flow.
+<div align="center">
+
+| Metric | Base Llama-3 8B | HumanFlow-Llama3-8B |
+|:--|:--:|:--:|
+| GPTZero Human Score | 18% | **99%** |
+| Turnitin Human Score | 10% | **92%+** |
+| Focus | Generic completion | **Humanized structural rewriting** |
+
+</div>
+
+> Benchmarks are measured with recommended inference settings and representative editorial prompts.
 
 ---
 
-## 🚀 The 99% Bypass Benchmark
+## Why HumanFlow Exists
 
-We don't just swap synonyms. HumanFlow manipulates structural perplexity to achieve passing scores on enterprise AI detectors. 
+Most LLM outputs are easy to detect because they converge on the same polished, repetitive writing patterns. Synonym replacement does not fix this.
 
-| Detector | Base Llama-3 | HumanFlow SFT |
-| :--- | :--- | :--- |
-| **GPTZero** | 18% Human | **99% Human** |
-| **Turnitin** | 10% Human | **92%+ Human** |
-
-*(Note: These benchmarks require the specific inference parameters outlined below).*
+HumanFlow-Llama3-8B is designed to change **rhythm, structure, and flow**—so rewritten text reads like a person with intent, not a model following a template.
 
 ---
 
-## 🏢 Enterprise DPO API & Web SaaS (Waitlist)
+## Core Capabilities
 
-**This repository contains the Open-Source SFT (Supervised Fine-Tuning) weights.** While the SFT model is excellent for local execution, we have built a **Private DPO (Direct Preference Optimization) Engine** that is significantly stronger, understands complex domain context, and operates at blistering speeds via our dedicated inference API.
+- **Structural Humanization**  
+  Rewrites sentence cadence, transitions, and discourse shape to reduce mechanical patterns.
 
-If you are an agency, SEO team, or developer tired of robotic output, get access to the HumanFlow Web App and API:
+- **Detector-Aware Output Behavior**  
+  Optimized for higher human-likelihood scores on mainstream detection systems.
 
-👉 **[Join the HumanFlow Pro Waitlist Here](https://[YOUR_WAITLIST_LINK].com)**
+- **Fast Local Deployment**  
+  Runs with GGUF quantizations on commodity hardware via `llama.cpp` stack.
+
+- **Production-Ready Foundation**  
+  Open-source SFT base that can be embedded into pipelines, tooling, and editorial workflows.
 
 ---
 
-## 💻 Quickstart (Local Inference)
+## Benchmark Table
 
-We highly recommend using the GGUF quantized models for efficient CPU/GPU inference.
+| Benchmark | Prompt Set | Base Model | HumanFlow-Llama3-8B |
+|:--|:--|:--:|:--:|
+| GPTZero | Long-form SEO + informational content | 18% Human | **99% Human** |
+| Turnitin | Academic-style paragraph rewrites | 10% Human | **92%+ Human** |
+| Qualitative Fluency | Mixed niches | Flat, repetitive | **Variable, natural flow** |
 
-### 1. Install Dependencies
+---
+
+## Quickstart (Local Inference)
+
+### 1) Install
+
 ```bash
 pip install llama-cpp-python
+```
+
+### 2) Download model
+
+Get the GGUF release from Hugging Face:  
+**https://huggingface.co/[YOUR_USERNAME]/HumanFlow-Llama3-8B-GGUF**
+
+### 3) Run
+
+```python
+from llama_cpp import Llama
+
+llm = Llama(
+    model_path="./HumanFlow-Llama3-8B.Q4_K_M.gguf",
+    n_ctx=4096,
+    n_threads=8,
+)
+
+prompt = "Rewrite this AI draft to sound natural and human without changing meaning:\n\n[YOUR_TEXT]"
+
+output = llm(
+    prompt,
+    max_tokens=700,
+    temperature=0.75,
+    top_p=0.9,
+    repeat_penalty=1.1,
+)
+
+print(output["choices"][0]["text"])
+```
+
+---
+
+## HumanFlow Pro API (Waitlist)
+
+The open-source release includes SFT weights.
+
+For teams that need stronger quality control, lower latency, and managed deployment, HumanFlow Pro provides:
+
+- Advanced preference-optimized rewriting engine
+- Dedicated API access
+- Web interface for high-volume workflows
+- Priority updates and support
+
+**[Join the HumanFlow Pro Waitlist](https://[YOUR_WAITLIST_LINK].com)**
+
+---
+
+## Before vs After
+
+### Input (Typical AI Draft)
+> In today’s rapidly evolving digital landscape, it is imperative for businesses to leverage cutting-edge strategies in order to maximize engagement and unlock sustainable growth.
+
+### Output (HumanFlow)
+> Digital markets move fast. If a business wants real growth, it needs clear strategy, fast iteration, and content people actually want to read.
+
+---
+
+## Who It’s For
+
+- **SEO teams** scaling content without robotic voice
+- **Agencies** delivering publish-ready rewrites at volume
+- **Writers & editors** cleaning first drafts quickly
+- **Students & researchers** improving clarity and tone
+- **Developers** embedding rewrite intelligence into apps
+
+---
+
+## Roadmap
+
+- [x] Open-source SFT release (Llama3-8B)
+- [x] GGUF compatibility for local inference
+- [ ] Hosted inference API (private beta)
+- [ ] Pro dashboard for teams
+- [ ] Expanded benchmark suite and eval transparency
+- [ ] Fine-tuned variants for domain-specific writing
+
+---
+
+## Community
+
+If HumanFlow helps your workflow:
+
+- Star the repository
+- Follow updates on new checkpoints
+- Share benchmark results and integrations
+- Open issues for reproducible bugs or model feedback
+
+**⭐ Star HumanFlow to support the project: https://github.com/iamhero2709/HumanFlow**
