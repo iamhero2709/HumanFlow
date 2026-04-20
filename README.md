@@ -43,7 +43,11 @@
 ### Model Availability
 
 - Full 16-bit model: [https://huggingface.co/randhir302/HumanFlow](https://huggingface.co/randhir302/HumanFlow)
-- Quantized model: Coming soon
+- Quantized models:
+  - [randhir302/HumanFlow-Q4_0-GGUF](https://huggingface.co/randhir302/HumanFlow-Q4_0-GGUF)
+  - [randhir302/HumanFlow-Q8_0-GGUF](https://huggingface.co/randhir302/HumanFlow-Q8_0-GGUF)
+  - [randhir302/HumanFlow-Q5_K_M-GGUF](https://huggingface.co/randhir302/HumanFlow-Q5_K_M-GGUF)
+  - [randhir302/HumanFlow-Q4_K_M-GGUF](https://huggingface.co/randhir302/HumanFlow-Q4_K_M-GGUF)
 
 ---
 
